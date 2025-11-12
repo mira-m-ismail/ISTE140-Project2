@@ -264,6 +264,13 @@ section {
     box-shadow: 0 8px 20px rgba(216, 8, 8, 0.4);
 }
 
+.service-icon {
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border-radius: 5%;
+}
+
 .learn-more {
     margin-top: 2rem;
     text-align: center;
