@@ -86,6 +86,10 @@ header {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
+h2 span {
+    color: var(--primary-text-color);
+}
+
 .logo-container {
     display: flex;
     align-items: center;
@@ -162,14 +166,22 @@ section {
     padding: 3rem 5%;
     background: linear-gradient(135deg, rgba(24, 27, 32, 0.95), rgba(0, 0, 0, 0.8));
     gap: 2rem;
+    /* Make intro content and video sit side-by-side on wide screens */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* allow stacking on small screens */
 }
 
 .intro-content {
+    /* allow this column to take available space but not shrink too small */
+    flex: 0 0 60%;
     max-width: 600px;
-    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    padding-right: 1rem;
 }
 
 .intro-title {
@@ -188,7 +200,7 @@ section {
 }
 
 .video-container {
-    flex: 1;
+    flex: 0 0 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -197,6 +209,7 @@ section {
 }
 
 .garage-video {
+    /* fill its container horizontally */
     width: 100%;
     height: auto;
     border-radius: 0.5rem;
@@ -232,7 +245,7 @@ section {
 }
 
 .service-item {
-    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
+    background: var(--border-dark);
     padding: 2rem;
     border-radius: 0.75rem;
     border: 1px solid var(--border-dark);
@@ -268,6 +281,129 @@ section {
 .learn-more-link:hover {
     color: var(--text-white);
     transform: translateX(5px);
+}
+
+/* =================================
+   SERVICE DETAILS SECTION (Page 2)
+   ================================= */
+
+.service-details {
+    min-height: auto;
+    padding: 4rem 5%;
+    background-color: var(--bg-dark);
+    gap: 2rem;
+}
+
+.service-hero-image {
+    width: 100%;
+    max-width: 1200px;
+    margin-bottom: 2rem;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(216, 8, 8, 0.3);
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    display: block;
+}
+
+.service-details article {
+    width: 100%;
+    max-width: 1000px;
+    margin-bottom: 2rem;
+}
+
+.service-details .service-item {
+    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
+    padding: 2.5rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-dark);
+    text-align: left;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+    cursor: default;
+    box-shadow: 0 4px 12px rgba(216, 8, 8, 0.2);
+}
+
+.service-details .service-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-text-color);
+    box-shadow: 0 8px 20px rgba(216, 8, 8, 0.4);
+}
+
+.service-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+}
+
+.service-description {
+    font-size: 1rem;
+    color: var(--text-gray-300);
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* =================================
+   SERVICES TABLE SECTION (Page 2)
+   ================================= */
+
+.services-table-section {
+    min-height: auto;
+    padding: 4rem 5%;
+    background: linear-gradient(135deg, rgba(24, 27, 32, 0.9), rgba(0, 0, 0, 0.7));
+    gap: 2rem;
+}
+
+.services-table {
+    width: 100%;
+    max-width: 1200px;
+    border-collapse: collapse;
+    margin-top: 2rem;
+    box-shadow: 0 8px 24px rgba(216, 8, 8, 0.2);
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.services-table thead {
+    background-color: var(--secondary-color);
+}
+
+.services-table th {
+    padding: 1.5rem;
+    text-align: left;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--text-white);
+    border-bottom: 2px solid var(--border-dark);
+}
+
+.services-table td {
+    padding: 1.25rem 1.5rem;
+    font-size: 0.95rem;
+    color: var(--text-gray-300);
+    border-bottom: 1px solid var(--border-dark);
+    background-color: var(--bg-dark-alt);
+}
+
+.services-table tbody tr {
+    transition: all 0.3s ease;
+}
+
+.services-table tbody tr:hover {
+    background-color: rgba(216, 8, 8, 0.1);
+    border-left: 6px solid var(--primary-text-color);
+    padding-left: 0.5rem;
+}
+
+.services-table tbody tr:last-child td {
+    border-bottom: none;
 }
 
 /* =================================
@@ -517,6 +653,28 @@ footer {
         grid-template-columns: 1fr;
     }
 
+    .service-details {
+        padding: 3rem 3%;
+    }
+
+    .service-details .service-item {
+        padding: 2rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .services-table-section {
+        padding: 3rem 3%;
+    }
+
+    .services-table th,
+    .services-table td {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
     footer {
         padding: 2rem 3%;
         flex-direction: column;
@@ -622,6 +780,36 @@ footer {
         font-size: 1.25rem;
     }
 
+    .service-details {
+        min-height: auto;
+        padding: 2rem 4%;
+    }
+
+    .service-details .service-item {
+        padding: 1.5rem;
+    }
+
+    .service-title {
+        font-size: 1.5rem;
+    }
+
+    .service-description {
+        font-size: 0.95rem;
+    }
+
+    .services-table-section {
+        padding: 2rem 4%;
+    }
+
+    .services-table {
+        font-size: 0.9rem;
+    }
+
+    .services-table th,
+    .services-table td {
+        padding: 0.75rem;
+    }
+
     footer {
         padding: 1.5rem 4%;
         gap: 1rem;
@@ -713,6 +901,36 @@ footer {
     }
 
     .opening-hours p, .location p, .contact-methods p {
+        font-size: 0.9rem;
+    }
+
+    .service-details {
+        padding: 1.5rem 3%;
+    }
+
+    .service-details .service-item {
+        padding: 1.25rem;
+    }
+
+    .service-title {
+        font-size: 1.25rem;
+    }
+
+    .service-description {
+        font-size: 0.9rem;
+    }
+
+    .services-table-section {
+        padding: 1.5rem 3%;
+    }
+
+    .services-table th,
+    .services-table td {
+        padding: 0.5rem;
+        font-size: 0.8rem;
+    }
+
+    .services-table th {
         font-size: 0.9rem;
     }
 
