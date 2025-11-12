@@ -1,0 +1,727 @@
+/* =================================
+   CSS RESET & BASE STYLES
+   ================================= */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Color Variables */
+    --btn-color: #fdfdfd;
+    --btn-bg: #d80808;
+    --primary-text-color: #d80808;
+    --secondary-color: #980808;
+    --header-link-hover: #d80808;
+    --input-hover-bd-color: #d80808;
+    --bg-dark: #181B20;
+    --bg-dark-alt: #1d2127;
+    --border-dark: #333a44;
+    --text-white: #ffffff;
+    --text-gray-200: #e5e7eb;
+    --text-gray-300: #d1d5db;
+    --text-gray-400: #9ca3af;
+    
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 0.75rem;
+    --spacing-lg: 1rem;
+    --spacing-xl: 1.5rem;
+    --spacing-2xl: 2rem;
+    --spacing-3xl: 2.5rem;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: "Goldman", "Kantumruy Pro", ui-monospace, "Tahoma", "Verdana", sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--bg-dark);
+    color: var(--text-white);
+    margin: 0;
+}
+
+img, video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+    font-family: inherit;
+}
+
+/* =================================
+   HEADER STYLES
+   ================================= */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 60px;
+    padding: 0 5%;
+    background-color: rgba(24, 27, 32, 0.95);
+    color: var(--text-white);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-shrink: 0;
+}
+
+.logo {
+    height: 50px;
+    width: 50px;
+    object-fit: contain;
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    white-space: nowrap;
+}
+
+.navbar {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-link {
+    font-size: 1rem;
+    color: var(--text-white);
+    transition: color 0.3s ease;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+}
+
+.nav-link:hover {
+    color: var(--header-link-hover);
+    background-color: rgba(216, 8, 8, 0.1);
+}
+
+/* =================================
+   MAIN CONTENT & SECTIONS
+   ================================= */
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-top: 60px;
+    padding-top: 2rem;
+}
+
+section {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* =================================
+   INTRO SECTION
+   ================================= */
+
+.intro-section {
+    min-height: 80vh;
+    padding: 3rem 5%;
+    background: linear-gradient(135deg, rgba(24, 27, 32, 0.95), rgba(0, 0, 0, 0.8));
+    gap: 2rem;
+}
+
+.intro-content {
+    max-width: 600px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.intro-text {
+    font-size: 1.1rem;
+    color: var(--text-gray-300);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+.video-container {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 700px;
+}
+
+.garage-video {
+    width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 30px rgba(216, 8, 8, 0.3);
+}
+
+/* =================================
+   SERVICES SECTION
+   ================================= */
+
+.services-preview {
+    min-height: 70vh;
+    padding: 4rem 5%;
+    background-color: var(--bg-dark);
+    gap: 2rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--text-white);
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.service-item {
+    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-dark);
+    text-align: center;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-white);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(216, 8, 8, 0.2);
+}
+
+.service-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-text-color);
+    box-shadow: 0 8px 20px rgba(216, 8, 8, 0.4);
+}
+
+.learn-more {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.learn-more-link {
+    color: var(--primary-text-color);
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    padding: 0.5rem 1rem;
+    display: inline-block;
+}
+
+.learn-more-link:hover {
+    color: var(--text-white);
+    transform: translateX(5px);
+}
+
+/* =================================
+   CONTACT & LOCATION INFO
+   ================================= */
+
+.contact-info {
+    min-height: 60vh;
+    padding: 4rem 5%;
+    background: linear-gradient(135deg, rgba(24, 27, 32, 0.9), rgba(0, 0, 0, 0.7));
+    gap: 2rem;
+}
+
+.hours-location {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.opening-hours, .location {
+    background-color: var(--bg-dark-alt);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-dark);
+}
+
+.opening-hours h3, .location h3, .contact-methods h3 {
+    font-size: 1.5rem;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+}
+
+.opening-hours p, .location p, .contact-methods p {
+    color: var(--text-gray-300);
+    margin-bottom: 0.5rem;
+    line-height: 1.8;
+}
+
+.social-link {
+    color: var(--primary-text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--text-white);
+}
+
+.contact-methods {
+    background-color: var(--bg-dark-alt);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--border-dark);
+    max-width: 400px;
+}
+
+.contact-methods a {
+    color: var(--primary-text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-methods a:hover {
+    color: var(--text-white);
+}
+
+/* =================================
+   BUTTON STYLES
+   ================================= */
+
+.btn {
+    padding: 12px 24px;
+    width: max-content;
+    border-radius: 24px;
+    color: var(--btn-color);
+    background-color: var(--btn-bg);
+    justify-content: center;
+    align-items: center;
+    display: inline-flex;
+    cursor: pointer;
+    border: none;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn:hover {
+    transform: scaleX(1.05);
+    box-shadow: 0 6px 20px rgba(216, 8, 8, 0.4);
+}
+
+.btn:active {
+    transform: scaleX(0.98);
+}
+
+.btn-white {
+    background-color: white;
+    color: var(--secondary-color);
+}
+
+.btn-white:hover {
+    background-color: var(--text-gray-200);
+}
+
+/* =================================
+   FOOTER STYLES
+   ================================= */
+
+footer {
+    margin-top: auto;
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    padding: 3rem 5%;
+    background-color: var(--bg-dark-alt);
+    color: var(--text-white);
+    border-top: 1px solid var(--border-dark);
+    flex-wrap: wrap;
+}
+
+.footer-text {
+    flex: 1;
+    text-align: center;
+    color: var(--text-gray-400);
+    padding: 1rem;
+}
+
+.footer-link {
+    color: var(--primary-text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 1rem;
+}
+
+.footer-link:hover {
+    color: var(--text-white);
+}
+
+/* =================================
+   UTILITY CLASSES
+   ================================= */
+
+.gradient-text {
+    background: linear-gradient(93deg, rgb(209, 14, 14) 32%, #8f0d0d 69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.primary-text-color {
+    color: var(--primary-text-color);
+}
+
+.opacity-0 {
+    opacity: 0 !important;
+}
+
+.opacity-100 {
+    opacity: 1 !important;
+}
+
+.reveal-up {
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+/* =================================
+   INPUT STYLES
+   ================================= */
+
+.input {
+    padding: 10px 15px;
+    background-color: transparent;
+    border-radius: 25px;
+    min-width: 100px;
+    border: 2px solid #818080;
+    color: var(--text-white);
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.input:active,
+.input:focus,
+.input:focus-within {
+    border: 2px solid var(--input-hover-bd-color);
+    outline: none;
+}
+
+/* =================================
+   RESPONSIVE STYLES - TABLET
+   ================================= */
+
+@media (max-width: 1024px) {
+    header {
+        padding: 0 3%;
+    }
+
+    .nav-list {
+        gap: 1.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .intro-section {
+        flex-direction: column;
+        min-height: auto;
+        padding: 2rem 3%;
+    }
+
+    .intro-title {
+        font-size: 2rem;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+
+    .services-preview {
+        padding: 3rem 3%;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .service-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+    }
+
+    .service-item {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .contact-info {
+        padding: 3rem 3%;
+    }
+
+    .hours-location {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        padding: 2rem 3%;
+        flex-direction: column;
+        gap: 1.5rem;
+    }
+}
+
+/* =================================
+   RESPONSIVE STYLES - MOBILE
+   ================================= */
+
+@media (max-width: 768px) {
+    header {
+        padding: 0 3%;
+        height: 50px;
+    }
+
+    .logo {
+        height: 40px;
+        width: 40px;
+    }
+
+    .site-title {
+        font-size: 1.2rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .nav-link {
+        font-size: 0.85rem;
+        padding: 0.3rem 0.6rem;
+    }
+
+    main {
+        margin-top: 50px;
+    }
+
+    .intro-section {
+        min-height: 60vh;
+        padding: 2rem 4%;
+    }
+
+    .intro-title {
+        font-size: 1.75rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .intro-text {
+        font-size: 0.95rem;
+        line-height: 1.6;
+    }
+
+    .video-container {
+        max-width: 100%;
+    }
+
+    .garage-video {
+        width: 100%;
+        height: auto;
+    }
+
+    .services-preview {
+        min-height: auto;
+        padding: 2rem 4%;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .service-item {
+        padding: 1.25rem;
+        font-size: 1rem;
+    }
+
+    .contact-info {
+        min-height: auto;
+        padding: 2rem 4%;
+    }
+
+    .hours-location {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .opening-hours, .location {
+        padding: 1.5rem;
+    }
+
+    .contact-methods {
+        padding: 1.5rem;
+        max-width: 100%;
+    }
+
+    .contact-methods h3 {
+        font-size: 1.25rem;
+    }
+
+    footer {
+        padding: 1.5rem 4%;
+        gap: 1rem;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-text {
+        font-size: 0.9rem;
+    }
+
+    .footer-link {
+        padding: 0.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+    }
+}
+
+/* =================================
+   RESPONSIVE STYLES - SMALL MOBILE
+   ================================= */
+
+@media (max-width: 480px) {
+    header {
+        height: 45px;
+    }
+
+    .logo-container {
+        gap: 0.5rem;
+    }
+
+    .logo {
+        height: 35px;
+        width: 35px;
+    }
+
+    .site-title {
+        font-size: 1rem;
+    }
+
+    .nav-list {
+        gap: 0.5rem;
+    }
+
+    .nav-link {
+        font-size: 0.75rem;
+        padding: 0.2rem 0.4rem;
+    }
+
+    main {
+        margin-top: 45px;
+    }
+
+    .intro-section {
+        min-height: 50vh;
+        padding: 1.5rem 3%;
+    }
+
+    .intro-title {
+        font-size: 1.4rem;
+    }
+
+    .intro-text {
+        font-size: 0.9rem;
+    }
+
+    .services-preview {
+        padding: 1.5rem 3%;
+    }
+
+    .section-title {
+        font-size: 1.25rem;
+    }
+
+    .service-item {
+        padding: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-info {
+        padding: 1.5rem 3%;
+    }
+
+    .opening-hours h3, .location h3, .contact-methods h3 {
+        font-size: 1.1rem;
+    }
+
+    .opening-hours p, .location p, .contact-methods p {
+        font-size: 0.9rem;
+    }
+
+    footer {
+        padding: 1rem 3%;
+    }
+
+    .btn {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
