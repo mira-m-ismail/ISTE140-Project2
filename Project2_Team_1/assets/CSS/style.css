@@ -2,7 +2,9 @@
    CSS RESET & BASE STYLES
    ================================= */
 
-*, *::before, *::after {
+*,
+*::before,
+*::after {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -23,7 +25,7 @@
     --text-gray-200: #e5e7eb;
     --text-gray-300: #d1d5db;
     --text-gray-400: #9ca3af;
-    
+
     /* Spacing */
     --spacing-xs: 0.25rem;
     --spacing-sm: 0.5rem;
@@ -50,7 +52,8 @@ body {
     margin: 0;
 }
 
-img, video {
+img,
+video {
     max-width: 100%;
     height: auto;
     display: block;
@@ -171,7 +174,8 @@ section {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    flex-wrap: wrap; /* allow stacking on small screens */
+    flex-wrap: wrap;
+    /* allow stacking on small screens */
 }
 
 .intro-content {
@@ -495,20 +499,25 @@ section {
     margin-top: 2rem;
 }
 
-.opening-hours, .location {
+.opening-hours,
+.location {
     background-color: var(--bg-dark-alt);
     padding: 2rem;
     border-radius: 0.75rem;
     border: 1px solid var(--border-dark);
 }
 
-.opening-hours h3, .location h3, .contact-methods h3 {
+.opening-hours h3,
+.location h3,
+.contact-methods h3 {
     font-size: 1.5rem;
     color: var(--primary-text-color);
     margin-bottom: 1rem;
 }
 
-.opening-hours p, .location p, .contact-methods p {
+.opening-hours p,
+.location p,
+.contact-methods p {
     color: var(--text-gray-300);
     margin-bottom: 0.5rem;
     line-height: 1.8;
@@ -844,7 +853,8 @@ footer {
         gap: 1rem;
     }
 
-    .opening-hours, .location {
+    .opening-hours,
+    .location {
         padding: 1.5rem;
     }
 
@@ -995,11 +1005,15 @@ footer {
         padding: 1.5rem 3%;
     }
 
-    .opening-hours h3, .location h3, .contact-methods h3 {
+    .opening-hours h3,
+    .location h3,
+    .contact-methods h3 {
         font-size: 1.1rem;
     }
 
-    .opening-hours p, .location p, .contact-methods p {
+    .opening-hours p,
+    .location p,
+    .contact-methods p {
         font-size: 0.9rem;
     }
 
