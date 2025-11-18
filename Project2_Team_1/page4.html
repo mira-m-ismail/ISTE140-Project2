@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hot Rides Customs | Contact Us</title>
+    <title>Hot Rides Customs | Contact Form</title>
 
     <link rel="stylesheet" href="./assets/CSS/style.css">
     <link rel="icon" type="image/png" href="./assets/media/logo.ico">
@@ -35,9 +35,28 @@
     </header>
 
     <main>
-        <section class="contact-page">
-            <h2 class="section-title">Get in <span>Touch</span></h2>
-        </section>
+        <div class="contact-container">
+            <!-- we are using web3forms to make the form submission -->
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+                <div class="content-left-title">
+                    <h2 class="section-title">Get in <span>Touch</span></h2>
+                    <hr>
+                </div>
+                <!-- access key for the form -->
+                <input type="hidden" name="access_key" value="fc35f812-cfd3-4906-923a-fc821f16ff43">
+                <!-- creating two input bars, one for name and one for email + one text area to write a message.
+                required attribute ensures users dont leave it empty-->
+                <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
+                <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
+                <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
+                <!-- button added here, needs an ICON image!!! -->
+                <button type="submit">Submit <img src="ICON FOR BUTTON IMAGE" alt="button icon image"></button>
+            </form>
+            <div class="contact-right">
+                <img class="contact-img" src=".\assets\media\img\services\hottip.png" alt="contact form image">
+            </div>
+
+        </div>
 
     </main>
     <!-- ===== FOOTER ===== -->
