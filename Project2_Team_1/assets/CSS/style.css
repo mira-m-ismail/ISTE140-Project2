@@ -490,37 +490,42 @@ section {
     gap: 2rem;
 }
 
-.hours-location {
+.contact-boxes {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 2rem;
     width: 100%;
     max-width: 1200px;
     margin-top: 2rem;
 }
 
-.opening-hours,
-.location {
+.info-box {
     background-color: var(--bg-dark-alt);
     padding: 2rem;
     border-radius: 0.75rem;
     border: 1px solid var(--border-dark);
 }
 
-.opening-hours h3,
-.location h3,
-.contact-methods h3 {
+.info-box h3 {
     font-size: 1.5rem;
     color: var(--primary-text-color);
     margin-bottom: 1rem;
 }
 
-.opening-hours p,
-.location p,
-.contact-methods p {
+.info-box p {
     color: var(--text-gray-300);
     margin-bottom: 0.5rem;
     line-height: 1.8;
+}
+
+.info-box a {
+    color: var(--primary-text-color);
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.info-box a:hover {
+    color: var(--text-white);
 }
 
 .social-link {
@@ -533,22 +538,102 @@ section {
     color: var(--text-white);
 }
 
-.contact-methods {
-    background-color: var(--bg-dark-alt);
-    padding: 2rem;
-    border-radius: 0.75rem;
-    border: 1px solid var(--border-dark);
-    max-width: 400px;
+/* =================================
+   CONTACT FORM SECTION (Page 4)
+   ================================= */
+
+.contact-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 5%;
 }
 
-.contact-methods a {
-    color: var(--primary-text-color);
-    font-weight: 600;
-    transition: color 0.3s ease;
+.contact-left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    max-width: 500px;
 }
 
-.contact-methods a:hover {
+.content-left-title {
+    margin-bottom: 1rem;
+}
+
+.content-left-title h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
     color: var(--text-white);
+    margin-bottom: 0.5rem;
+}
+
+.content-left-title hr {
+    border: none;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary-text-color) 0%, transparent 100%);
+    margin-top: 0.5rem;
+}
+
+.contact-inputs {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    background-color: var(--bg-dark-alt);
+    border: 2px solid var(--border-dark);
+    border-radius: 8px;
+    color: var(--text-white);
+    font-family: inherit;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.contact-inputs:focus {
+    border-color: var(--primary-text-color);
+    background-color: rgba(33, 40, 53, 0.8);
+    box-shadow: 0 0 0 3px rgba(255, 68, 68, 0.1);
+}
+
+.contact-inputs::placeholder {
+    color: var(--text-gray-400);
+}
+
+textarea.contact-inputs {
+    min-height: 150px;
+    resize: vertical;
+    font-family: inherit;
+}
+
+.contact-left button { /* styled like .btn but a bit different */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.contact-right {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+}
+
+.contact-img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(216, 8, 8, 0.3);
+    object-fit: cover; /* ensures image covers the container */
+    opacity: 0.8;
 }
 
 /* =================================
@@ -571,6 +656,11 @@ section {
     font-weight: 600;
 }
 
+.btn img {
+    width: 20px;
+    height: 20px;
+}
+
 .btn:hover {
     transform: scaleX(1.05);
     box-shadow: 0 6px 20px rgba(216, 8, 8, 0.4);
@@ -587,6 +677,158 @@ section {
 
 .btn-white:hover {
     background-color: var(--text-gray-200);
+}
+
+/* =================================
+   GALLERY STYLES (Page 3)
+   ================================= */
+
+.gallery-intro {
+    padding: 4rem 5%;
+    background: linear-gradient(135deg, rgba(24, 27, 32, 0.95), rgba(0, 0, 0, 0.8));
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.gallery-intro .intro-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+}
+
+.gallery-photos {
+    padding: 2rem 5%;
+    background-color: var(--bg-dark);
+}
+
+.gallery-block {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 2rem 0;
+}
+
+.gallery-block-title {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.gallery-block-text {
+    font-size: 1rem;
+    color: var(--text-gray-300);
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+    width: 100%;
+    margin-top: 2rem;
+}
+
+.photo-card {
+    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
+    border-radius: 0.75rem;
+    overflow: hidden;
+    border: 1px solid var(--border-dark);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(216, 8, 8, 0.2);
+}
+
+.photo-card:hover {
+    transform: translateY(-8px);
+    border-color: var(--primary-text-color);
+    box-shadow: 0 12px 30px rgba(216, 8, 8, 0.5);
+}
+
+.photo-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: block;
+}
+
+.photo-card figcaption {
+    padding: 1.25rem;
+    color: var(--text-gray-300);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    text-align: center;
+}
+
+/* Video Gallery Styles */
+.gallery-videos {
+    padding: 4rem 5%;
+    background: linear-gradient(135deg, rgba(24, 27, 32, 0.9), rgba(0, 0, 0, 0.7));
+    display: grid;
+    gap: 2rem;
+}
+
+.gallery-intro-text {
+    text-align: center;
+    color: var(--text-gray-300);
+    font-size: 1.05rem;
+    max-width: 800px;
+    margin: 0 auto 3rem auto;
+}
+
+.video-card {
+    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    border: 1px solid var(--border-dark);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(216, 8, 8, 0.2);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--primary-text-color);
+    box-shadow: 0 8px 20px rgba(216, 8, 8, 0.4);
+}
+
+.iframe-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    border-radius: 0.5rem;
+    overflow: hidden;
+    margin-bottom: 1rem;
+    background-color: var(--bg-dark);
+}
+
+.iframe-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-text-color);
+    margin-bottom: 0.75rem;
+}
+
+.video-text {
+    color: var(--text-gray-300);
+    font-size: 0.95rem;
+    line-height: 1.7;
 }
 
 /* =================================
@@ -727,8 +969,8 @@ footer {
         padding: 3rem 3%;
     }
 
-    .hours-location {
-        grid-template-columns: 1fr;
+    .contact-boxes {
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .reviews-section {
@@ -759,6 +1001,40 @@ footer {
     .services-table td {
         padding: 1rem;
         font-size: 0.9rem;
+    }
+
+    .contact-container {
+        gap: 2rem;
+        padding: 3rem 3%;
+    }
+
+    .content-left-title h2 {
+        font-size: 2rem;
+    }
+
+        .gallery-intro {
+        padding: 3rem 3%;
+    }
+
+    .gallery-photos {
+        padding: 2rem 3%;
+    }
+
+    .gallery-block-title {
+        font-size: 1.75rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 1.25rem;
+    }
+
+    .photo-card img {
+        height: 220px;
+    }
+
+    .gallery-videos {
+        padding: 3rem 3%;
     }
 
     footer {
@@ -848,22 +1124,16 @@ footer {
         padding: 2rem 4%;
     }
 
-    .hours-location {
+    .contact-boxes {
         grid-template-columns: 1fr;
         gap: 1rem;
     }
 
-    .opening-hours,
-    .location {
+    .info-box {
         padding: 1.5rem;
     }
 
-    .contact-methods {
-        padding: 1.5rem;
-        max-width: 100%;
-    }
-
-    .contact-methods h3 {
+    .info-box h3 {
         font-size: 1.25rem;
     }
 
@@ -917,6 +1187,98 @@ footer {
     .services-table th,
     .services-table td {
         padding: 0.75rem;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        padding: 2rem 4%;
+    }
+
+    .contact-left,
+    .contact-right {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .content-left-title h2 {
+        font-size: 1.75rem;
+    }
+
+    .contact-inputs {
+        padding: 0.875rem 1rem;
+        font-size: 0.95rem;
+    }
+
+    textarea.contact-inputs {
+        min-height: 120px;
+    }
+
+    .contact-left button {
+        padding: 0.875rem 1.75rem;
+        font-size: 1rem;
+    }
+    
+    .gallery-intro {
+        padding: 2rem 4%;
+    }
+
+    .gallery-intro .intro-text {
+        font-size: 0.95rem;
+    }
+
+    .gallery-photos {
+        padding: 1.5rem 4%;
+    }
+
+    .gallery-block {
+        margin-bottom: 3rem;
+        padding: 1.5rem 0;
+    }
+
+    .gallery-block-title {
+        font-size: 1.5rem;
+    }
+
+    .gallery-block-text {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .photo-card img {
+        height: 200px;
+    }
+
+    .photo-card figcaption {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .gallery-videos {
+        padding: 2rem 4%;
+    }
+
+    .gallery-intro-text {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+
+    .video-card {
+        padding: 1.25rem;
+    }
+
+    .video-title {
+        font-size: 1.25rem;
+    }
+
+    .video-text {
+        font-size: 0.9rem;
     }
 
     footer {
@@ -1005,15 +1367,11 @@ footer {
         padding: 1.5rem 3%;
     }
 
-    .opening-hours h3,
-    .location h3,
-    .contact-methods h3 {
+    .info-box h3 {
         font-size: 1.1rem;
     }
 
-    .opening-hours p,
-    .location p,
-    .contact-methods p {
+    .info-box p {
         font-size: 0.9rem;
     }
 
@@ -1069,6 +1427,99 @@ footer {
 
     .services-table th {
         font-size: 0.9rem;
+    }
+
+    .contact-container {
+        padding: 1.5rem 3%;
+    }
+
+    .content-left-title h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-inputs {
+        padding: 0.75rem 0.875rem;
+        font-size: 0.9rem;
+    }
+
+    textarea.contact-inputs {
+        min-height: 100px;
+    }
+
+    .contact-left button {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .contact-left button img {
+        width: 16px;
+        height: 16px;
+    }
+
+    .gallery-intro {
+        padding: 1.5rem 3%;
+    }
+
+    .gallery-intro .section-title {
+        font-size: 1.25rem;
+    }
+
+    .gallery-intro .intro-text {
+        font-size: 0.9rem;
+    }
+
+    .gallery-photos {
+        padding: 1rem 3%;
+    }
+
+    .gallery-block {
+        margin-bottom: 2.5rem;
+        padding: 1rem 0;
+    }
+
+    .gallery-block-title {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .gallery-block-text {
+        font-size: 0.9rem;
+    }
+
+    .photo-grid {
+        gap: 0.75rem;
+        margin-top: 1.5rem;
+    }
+
+    .photo-card img {
+        height: 180px;
+    }
+
+    .photo-card figcaption {
+        padding: 0.875rem;
+        font-size: 0.85rem;
+    }
+
+    .gallery-videos {
+        padding: 1.5rem 3%;
+    }
+
+    .gallery-intro-text {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .video-card {
+        padding: 1rem;
+    }
+
+    .video-title {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .video-text {
+        font-size: 0.85rem;
     }
 
     footer {
