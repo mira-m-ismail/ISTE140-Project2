@@ -700,13 +700,26 @@ textarea.contact-inputs {
 .gallery-photos {
     padding: 2rem 5%;
     background-color: var(--bg-dark);
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
 }
 
 .gallery-block {
     width: 100%;
     max-width: 1200px;
-    margin: 0 auto 4rem auto;
-    padding: 2rem 0;
+    margin: 0 auto;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
+    border-radius: 1rem;
+    border: 1px solid var(--border-dark);
+    box-shadow: 0 8px 24px rgba(216, 8, 8, 0.2);
+    transition: all 0.3s ease;
+}
+
+.gallery-block:hover {
+    border-color: var(--primary-text-color);
+    box-shadow: 0 12px 32px rgba(216, 8, 8, 0.3);
 }
 
 .gallery-block-title {
@@ -729,40 +742,23 @@ textarea.contact-inputs {
 
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
     width: 100%;
-    margin-top: 2rem;
 }
 
 .photo-card {
-    background: linear-gradient(135deg, var(--bg-dark-alt), var(--border-dark));
-    border-radius: 0.75rem;
+    border-radius: 0.5rem;
     overflow: hidden;
-    border: 1px solid var(--border-dark);
     transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(216, 8, 8, 0.2);
-}
-
-.photo-card:hover {
-    transform: translateY(-8px);
-    border-color: var(--primary-text-color);
-    box-shadow: 0 12px 30px rgba(216, 8, 8, 0.5);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 .photo-card img {
     width: 100%;
-    height: 250px;
+    height: 220px;
     object-fit: cover;
     display: block;
-}
-
-.photo-card figcaption {
-    padding: 1.25rem;
-    color: var(--text-gray-300);
-    font-size: 0.95rem;
-    line-height: 1.6;
-    text-align: center;
 }
 
 /* Video Gallery Styles */
@@ -791,12 +787,6 @@ textarea.contact-inputs {
     max-width: 1200px;
     margin: 0 auto;
     width: 100%;
-}
-
-.video-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--primary-text-color);
-    box-shadow: 0 8px 20px rgba(216, 8, 8, 0.4);
 }
 
 .iframe-wrapper {
