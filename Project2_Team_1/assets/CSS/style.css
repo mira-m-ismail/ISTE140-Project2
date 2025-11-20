@@ -740,6 +740,38 @@ textarea.contact-inputs {
     margin-right: auto;
 }
 
+.horizontal-scroll-container {
+    /* Enable horizontal scrolling */
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    /* Use gap instead of grid for flexibility in scrolling */
+    gap: 1rem;
+    padding-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: -1rem; /* Adjust to align with the rest of the content */
+    margin-right: -1rem;
+    
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-text-color) var(--bg-dark-alt);
+    -webkit-overflow-scrolling: touch;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar {
+    height: 8px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-thumb {
+    background-color: var(--primary-text-color);
+    border-radius: 10px;
+}
+
+.horizontal-scroll-container::-webkit-scrollbar-track {
+    background: var(--bg-dark-alt);
+    border-radius: 10px;
+}
+
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -747,18 +779,23 @@ textarea.contact-inputs {
     width: 100%;
 }
 
+.horizontal-scroll-container .photo-card {
+    flex: 0 0 300px; /* Do not shrink, do not grow, fixed base width */
+    height: auto;
+}
+
+.horizontal-scroll-container .photo-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
 .photo-card {
     border-radius: 0.5rem;
     overflow: hidden;
     transition: all 0.3s ease;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-}
-
-.photo-card img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
-    display: block;
 }
 
 /* Video Gallery Styles */
@@ -1014,10 +1051,11 @@ footer {
         font-size: 1.75rem;
     }
 
-    .photo-grid {
+    /* .photo-grid removed as it's replaced by .horizontal-scroll-container */
+    /* .photo-grid {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1.25rem;
-    }
+    } */
 
     .photo-card img {
         height: 220px;
@@ -1236,10 +1274,11 @@ footer {
         margin-bottom: 1.5rem;
     }
 
-    .photo-grid {
+    /* .photo-grid removed, only relevant to video grid now */
+    /* .photo-grid {
         grid-template-columns: 1fr;
         gap: 1rem;
-    }
+    } */
 
     .photo-card img {
         height: 200px;
@@ -1476,10 +1515,11 @@ footer {
         font-size: 0.9rem;
     }
 
-    .photo-grid {
+    /* .photo-grid removed */
+    /* .photo-grid {
         gap: 0.75rem;
         margin-top: 1.5rem;
-    }
+    } */
 
     .photo-card img {
         height: 180px;
