@@ -130,6 +130,22 @@ h2 span {
     background-color: rgba(216, 8, 8, 0.1);
 }
 
+/* Hamburger hidden on desktop */
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--text-white);
+    border-radius: 2px;
+}
+
 /* =================================
    MAIN CONTENT & SECTIONS
    ================================= */
@@ -1102,13 +1118,52 @@ footer {
         font-size: 1.2rem;
     }
 
+    .hamburger {
+        display: block; /* Show button on mobile */
+        z-index: 100;
+    }
+
+    /* Turn the hamburger into an X when active */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Hide the normal navbar and position it absolutely */
+    .navbar {
+        position: absolute;
+    }
+
     .nav-list {
-        gap: 1rem;
+        position: fixed;
+        left: -100%; /* Hide off-screen */
+        top: 50px; /* Height of your header */
+        gap: 0;
+        flex-direction: column;
+        background-color: rgba(24, 27, 32, 0.98);
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        padding: 2rem 0;
+        box-shadow: 0 10px 10px rgba(0,0,0,0.5);
+        height: calc(100vh - 50px); /* Full height minus header */
+    }
+
+    .nav-list.active {
+        left: 0; /* Slide in */
     }
 
     .nav-link {
-        font-size: 0.85rem;
-        padding: 0.3rem 0.6rem;
+        display: block; /* Full width clickable area */
+        margin: 1rem 0;
+        font-size: 1.2rem;
     }
 
     main {
