@@ -16,22 +16,44 @@
 <body>
 
     <!-- ===== HEADER ===== -->
-    <header class="header">
-        <div class="logo-container">
-            <img src="./assets/media/logo.png" alt="Hot Rides Customs Logo" class="logo">
-            <h1 class="site-title">Hot Rides Customs</h1>
-        </div>
+<header class="header">
+    <div class="logo-container">
+        <img src="./assets/media/logo.png" alt="Hot Rides Customs Logo" class="logo">
+        <h1 class="site-title">Hot Rides Customs</h1>
+    </div>
 
-        <nav class="navbar">
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="page2.html" class="nav-link">Services</a></li>
-                <li><a href="page3.html" class="nav-link">Gallery</a></li>
-                <li><a href="page4.html" class="nav-link">Contact Us</a></li>
-                <li><a href="references.html" class="nav-link">References</a></li>
-            </ul>
-        </nav>
-    </header>
+    <div class="hamburger" id="hamburger">
+        <span class="bar"></span>
+        <span class="bar"></span>
+        <span class="bar"></span>
+    </div>
+
+    <nav class="navbar">
+        <ul class="nav-list" id="nav-list">
+            <li><a href="index.html" class="nav-link">Home</a></li>
+            <li><a href="page2.html" class="nav-link">Services</a></li>
+            <li><a href="page3.html" class="nav-link">Gallery</a></li>
+            <li><a href="page4.html" class="nav-link">Contact Us</a></li>
+            <li><a href="references.html" class="nav-link">References</a></li>
+        </ul>
+    </nav>
+</header>
+
+<script>
+    const hamburger = document.getElementById('hamburger');
+    const navList = document.getElementById('nav-list');
+
+    hamburger.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        navList.classList.toggle('active');
+    });
+
+    // Close menu when a link is clicked
+    document.querySelectorAll('.nav-link').forEach(n => n.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        navList.classList.remove('active');
+    }));
+</script>
 
     <!-- ===== MAIN CONTENT ===== -->
     <main>
