@@ -87,6 +87,32 @@
         <p class="footer-text">&copy; 2025 Hot Rides Customs. All rights reserved.</p>
         <p class="footer-link"><a href="page4.html">Contact Us</a></p>
     </footer>
+
+    <audio id="submit-sound" src="./assets/media/Car Engine Rev Sound Effect.mp3" preload="auto"></audio>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const contactForm = document.querySelector('.contact-left');
+            const soundEffect = document.getElementById('submit-sound');
+
+            if (contactForm) {
+                contactForm.addEventListener('submit', function(event) {
+                    // 1. Prevent the form from sending immediately so the sound can play
+                    event.preventDefault();
+
+                    // 2. Play the sound
+                    soundEffect.play().catch(error => {
+                        console.log("Audio playback failed:", error);
+                    });
+
+                    // 3. Wait 800ms (0.8 seconds) for the sound to be heard, then submit
+                    setTimeout(() => {
+                        contactForm.submit();
+                    }, 800); 
+                });
+            }
+        });
+    </script>
 </body>
 
 
