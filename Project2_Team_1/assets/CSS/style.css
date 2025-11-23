@@ -971,6 +971,12 @@ footer {
     color: var(--text-white);
 }
 
+.social-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Adds a little space between the two icons */
+}
+
 .social-icon {
     display: flex;
     padding: 0.5rem;
@@ -1266,7 +1272,7 @@ footer {
     }
 
     .service-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr); 
         gap: 0.75rem;
     }
 
@@ -1402,12 +1408,6 @@ footer {
         margin-bottom: 1.5rem;
     }
 
-    /* .photo-grid removed, only relevant to video grid now */
-    /* .photo-grid {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    } */
-
     .photo-card img {
         height: 200px;
     }
@@ -1443,6 +1443,14 @@ footer {
         gap: 1rem;
         flex-direction: column;
         text-align: center;
+        align-items: center;
+    }
+
+    /* to keep icons side-by-side */
+    .social-group {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
     }
 
     .footer-text {
@@ -1456,6 +1464,13 @@ footer {
     .btn {
         padding: 10px 20px;
         font-size: 0.95rem;
+    }
+
+    .references-grid {
+        /* Forces single column on mobile to prevent scrolling */
+        grid-template-columns: 1fr; 
+        gap: 1.5rem;
+        width: 100%; /* Ensures it stays within container */
     }
 }
 
