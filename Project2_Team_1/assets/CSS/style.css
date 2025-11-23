@@ -971,6 +971,17 @@ footer {
     color: var(--text-white);
 }
 
+.social-icon {
+    display: flex;
+    padding: 0.5rem;
+    width: auto;
+    height: 50px;
+}
+
+/* =================================
+   ANIMATIONS
+   ================================= */
+
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
